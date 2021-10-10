@@ -1,7 +1,7 @@
 const mongoose = require('mongoose');
-const db = require('../models');
+const db = require('../models/exercise');
 
-mongoose.connect('mongodb://localhost/workout', {
+mongoose.connect('mongodb://localhost/fitness-tracker-oct2021', {
   useNewUrlParser: true,
   useFindAndModify: false,
   useUnifiedTopology: true,
