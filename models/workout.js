@@ -1,9 +1,9 @@
 const mongoose = require("mongoose");
 
-const Schema = monotype.Schema;
+const Schema = mongoose.Schema;
 
 // Creates the workout schema
-const workoutSchema = new Schema({
+const WorkoutSchema = new Schema({
   day: {
     type: Date,
     default: Date.now(),
@@ -45,7 +45,7 @@ const workoutSchema = new Schema({
 });
 
 // Created mongoose model 'workout' and apply the workoutSchema
-const Workout = mongoose.model("workout", workoutSchema);
+const Workout = mongoose.model("workout", WorkoutSchema);
 
 // Export workout model
 module.exports = Workout;
