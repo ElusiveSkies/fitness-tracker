@@ -1,5 +1,6 @@
 const mongoose = require("mongoose");
 const express = require("express");
+const logger = require("morgan")
 
 const app = express();
 
@@ -17,9 +18,11 @@ mongoose.connect(
 
   app.use(express.static("public"));
 
-  app.listen(PORT, () => {
-    console.log(`App running on port ${PORT}!`);
-  });
+  app.use(logger("dev"));
 
   app.use(require("./routes/html-routes"))
   app.use(require("./routes/api-routes"))
+
+  app.listen(PORT, () => {
+    console.log(`App running on port ${PORT}!`);
+  });

@@ -20,6 +20,11 @@ const WorkoutSchema = new Schema({
         trim: true,
         required: "Enter an exercise type",
       },
+      distance: {
+        type: Number,
+        trim: true,
+        // required: "Enter an exercise type",
+      },
       duration: {
         type: Number,
         trim: true,
@@ -28,17 +33,17 @@ const WorkoutSchema = new Schema({
       weight: {
         type: Number,
         trim: true,
-        required: "Enter the weight lifted",
+        // required: "Enter the weight lifted",
       },
       reps: {
         type: Number,
         trim: true,
-        required: "Enter the number of repetitions",
+        // required: "Enter the number of repetitions",
       },
       sets: {
         type: Number,
         trim: true,
-        required: "Enter the number of sets",
+        // required: "Enter the number of sets",
       },
     },
   ],
