@@ -1,20 +1,50 @@
 const router = require("express").Router();
-const db = require("../models/workout.js");
+const db = require("../models/");
 
 
+// Finds data for getting all workouts
+router.get("/api/workouts", (req, res) => {
+	db.Workout.find({})
+		.then((dbData) => {
+			res.json(dbData);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
 
+// GET request
+router.get("/api/workouts/range", (req, res) => {
+	db.Workout.find({})
+		.then((dbData) => {
+			res.json(dbData);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
 
+// Post route to create workout
+router.post("/api/workouts", ({ body }, res) => {
+	db.Workout.create(body)
+		.then((dbData) => {
+			res.json(dbData);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
 
+// Put route to find and update workout
+router.put("/api/workouts/:id", ({ body, params }, res) => {
+	db.Workout.findByIdAndUpdate(params.id, { $push: { exercises: body } })
+		.then((dbData) => {
+			res.json(dbData);
+		})
+		.catch((err) => {
+			res.json(err);
+		});
+});
 
-// Route to save a workout to the db
-// router.post("/api/workouts", (req, res) => {
-//     Workout.create({ body })
-//     .then((dbWorkout) => {
-//         console.log(dbWorkout);
-//     })
-//     .catch((err) => {
-//         console.log(err);
-//     })
-// })
-
-// modules.exports = router;
+// Export API routes
+module.exports = router;
