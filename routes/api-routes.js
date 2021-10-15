@@ -4,7 +4,7 @@ const db = require("../models/");
 
 // Finds data for getting all workouts
 router.get("/api/workouts", (req, res) => {
-	db.Workout.find({})
+	db.Workout.find()
 		.then((dbData) => {
 			res.json(dbData);
 		})
@@ -15,7 +15,7 @@ router.get("/api/workouts", (req, res) => {
 
 // GET request
 router.get("/api/workouts/range", (req, res) => {
-	db.Workout.find({})
+	db.Workout.find()
 		.then((dbData) => {
 			res.json(dbData);
 		})
