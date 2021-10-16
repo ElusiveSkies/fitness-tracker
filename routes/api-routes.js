@@ -13,7 +13,7 @@ router.get("/api/workouts", (req, res) => {
 		});
 });
 
-// GET request
+// Get route for specific workout
 router.get("/api/workouts/range", (req, res) => {
 	db.Workout.find()
 		.then((dbData) => {
