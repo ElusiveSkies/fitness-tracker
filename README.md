@@ -47,6 +47,10 @@ The user should be able to:
 Entering the following in the integrated terminal to begin:
 **npm start**
 
+Video of Usage
+
+![Video of Usage](./public/img/fitness-tracker-app.gif)
+
 ## License
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
